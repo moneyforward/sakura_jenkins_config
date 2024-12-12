@@ -9,5 +9,6 @@ USER jenkins
 COPY plugins.txt /usr/share/jenkins/ref/plugins.txt
 RUN jenkins-plugin-cli --plugin-file /usr/share/jenkins/ref/plugins.txt
 
-ENV CASC_JENKINS_CONFIG=/var/jenkins_conf/jenkins.yaml # mount by docker-compose file
+# jenkins.yaml is set by the docker-compose file. Also, jenkins.yaml is distributed by ansible
+ENV CASC_JENKINS_CONFIG=/var/jenkins_conf/jenkins.yaml
 ENV JAVA_OPTS="-Djenkins.install.runSetupWizard=false"
