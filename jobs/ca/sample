@@ -1,0 +1,30 @@
+pipeline {
+    agent any
+
+        options {
+            buildDiscarder(logRotator(daysToKeepStr: '7'))
+            timestamps()
+        }
+
+        parameters {
+            booleanParam(name: 'DoYouExecute', defaultValue: false, description: 'If you execute job, please check this box.')
+        }
+
+
+    stages {
+        stage('Hello') {
+
+            when {
+                allOf {
+                    expression { params.DoYouExecute == true }
+                }
+            }
+
+            steps {
+                echo 'Hello World'
+                echo 'Hello World2'
+                echo 'xyz'
+            }
+        }
+    }
+}

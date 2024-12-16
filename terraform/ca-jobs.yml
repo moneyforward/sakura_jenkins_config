@@ -1,0 +1,5 @@
+jobs:
+  - name: sample
+    description: sample
+  - name: sample2
+    description: sample2
