@@ -1,7 +1,7 @@
 
 locals {
   raw_ca_jobs = yamldecode(file("./ca-jobs.yml"))
-  ca_jobs = {for job in local.raw_ca_jobs : job.name => job.description}
+  ca_jobs = {for job in local.raw_ca_jobs.jobs : job.name => job.description}
 }
 
 module "ca_jobs" {
