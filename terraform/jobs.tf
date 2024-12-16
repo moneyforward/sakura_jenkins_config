@@ -5,7 +5,7 @@ locals {
 }
 
 module "ca_jobs" {
-  source          = "./modules/job"
+  source          = "./modules/"
   for_each        = local.ca_jobs
   job_name        = each.key
   folder          = "ca"

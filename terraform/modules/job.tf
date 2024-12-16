@@ -2,7 +2,7 @@
 resource "jenkins_job" "example" {
   name     = var.job_name
   folder = var.folder
-  template = templatefile("./job.xml.tpl", {
+  template = templatefile("${path.module}/job.xml", {
     folder      = var.folder
     filename    = var.job_name
     description = var.job_description
