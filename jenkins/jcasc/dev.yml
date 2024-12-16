@@ -6,7 +6,7 @@ credentials:
               appID: "1069816"
               description: "Gtihub App"
               id: "github-app"
-              privateKey: "${readFile:/etc/jenkins/secrets/github-key.pem}"  # When you start jenkins container, you need to set this environment variable.
+              privateKey: "${readFile:/etc/jenkins/secrets/github-key.pem}"
           - vaultTokenCredential:
               description: "vault-token"
               id: "vault-token"
