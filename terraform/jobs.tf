@@ -10,4 +10,5 @@ module "ca_jobs" {
   job_name        = each.key
   folder          = "ca"
   job_description = each.value
+  branch          = var.branch
 }

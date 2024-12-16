@@ -13,3 +13,8 @@ variable "admin_password" {
     description = "The password of the admin user"
     type        = string
 }
+
+variable "branch" {
+    description = "The github branch to build"
+    type        = string
+}
